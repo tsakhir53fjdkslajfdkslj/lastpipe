@@ -1,10 +1,22 @@
 pipeline {
-  agent any
-  stages {
-  stage ('Hello') {
-    steps {
-      echo 'Hello world!'
+
+    agent any 
+
+    parameters {
+        string (name: 'name', description: 'Please tell me your name')
+        text (name: 'descc', description: 'Describe about the jobs details')
+        booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test case')
+        choice(name: 'Branch', choices: ['Master', 'Dev'], description: 'Choose branch')
+        password(name: 'SONAR_SERVER_PWD', description: 'ENTER Sonar password')
+
     }
-  }
-  }
+
+    stages {
+        stage ('Printing parameters') {
+            steps {
+                echo "Hello ${parms.NAME}"
+                
+            }
+        }
+    }
 }
