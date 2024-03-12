@@ -14,7 +14,7 @@ pipeline {
         stage ('git'){
             steps {
 
-                git branch: 'master', credentialsId: '12345-1234-4696-af25-123455', url: 'ssh://git@bitbucket.org:company/repo.git'
+                git branch: 'main', credentialsId: 'Sx3bTLCp3ABvbrcDLm86349wRvh4ZjAjwFLChSmSidc', url: 'git@github.com:tsakhir53fjdkslajfdkslj/lastpipe.git'
 
             }
         }
