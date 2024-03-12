@@ -15,7 +15,7 @@ pipeline {
 
                 script{
 
-                    sshagent(['hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo']){
+                    sshagent(credentials: ['hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo']){
                         checkout scm
                     }
                 }
