@@ -1,13 +1,16 @@
 pipeline {
 
     agent any 
+       def name = "${env.BRANCH_NAME}"
 
     stages {
 
         stage ('build'){
-            
+            when {
+                branch 'dev'
+            }
             steps {
-                echo 'Working on dev branch  --- env.BRANCH_NAME'
+                echo 'Working on dev branch   --- $name'
             }
         }
     }
