@@ -5,23 +5,11 @@ pipeline {
     choice (name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose gender')        
 
     }
-    environment {
-        DEPLOY_TO = 'production'
-    }
-
-    stages {
-        stage('Initialization'){
-            steps {
-                echo "$JAVA_INSTALLATION_PATH"
-            }
+        stage(){
+            git branch: 'master' , 
+            credentailsId: '12345-1234-4696-af25-123455',
+            url: 'ssh://git@bitbucket.org:company/repo.git'
         }
-    
-        stage('Enviroment'){
-            steps {
-                echo "$DEPLOY_TO"
-            }
-        }
-
         stage ('Printing name'){
             steps {
                 script {
