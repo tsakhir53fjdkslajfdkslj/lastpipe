@@ -5,7 +5,7 @@ pipeline{
 
 
     environment {
-        GIT_SSH_KEY = credentials('SHA256:hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo')
+        GIT_SSH_KEY = credentials('lOHCc6KR1fSyrZ8t5QcYRZAnc14qD3Fl28sP44l3ulI')
     }
 
 
