@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage ('Printing parameters') {
             steps {
-                echo "Hello ${parms.NAME}"
+                echo "Hello ${prams.NAME}"
                 
             }
         }
