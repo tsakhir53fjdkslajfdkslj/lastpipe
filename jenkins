@@ -14,7 +14,7 @@ pipeline {
         stage ('git'){
             steps {
 
-                git branch: 'main', credentialsId: 'Sx3bTLCp3ABvbrcDLm86349wRvh4ZjAjwFLChSmSidc', url: 'git@github.com:tsakhir53fjdkslajfdkslj/lastpipe.git'
+                git branch: 'main', credentialsId: 'hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo', url: 'git@github.com:tsakhir53fjdkslajfdkslj/lastpipe.git'
 
             }
         }
