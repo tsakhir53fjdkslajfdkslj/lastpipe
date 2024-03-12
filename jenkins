@@ -5,7 +5,7 @@ pipeline{
 
 
     environment {
-        GIT_SSH_KEY = credentials('hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo')
+        GIT_SSH_KEY = credentials('SHA256:hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo')
     }
 
 
@@ -14,8 +14,9 @@ pipeline{
 
         stage('Checkout from github'){
             steps {
+            script{
                 sh "ssh-agent bash -c 'ssh-add ${GIT_SSH_KEY}; git clone git@github.com:tsakhir53fjdkslajfdkslj/lastpipe.git' "
-
+            }
             }
         }
         stage('Install dependencies'){
