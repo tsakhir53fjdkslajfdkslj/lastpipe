@@ -5,11 +5,9 @@ pipeline {
     stages {
 
         stage ('build'){
-            when {
-                branch 'main'
-            }
+            
             steps {
-                echo 'Working on dev branch'
+                echo 'Working on dev branch  --- $branch'
             }
         }
     }
