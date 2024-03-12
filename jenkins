@@ -5,11 +5,20 @@ pipeline {
     choice (name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose gender')        
 
     }
+    environmne {
+        DEPLOY_TO = 'production'
+    }
 
     stages {
         stage('Initialization'){
             steps {
                 echo "$JAVA_INSTALLATION_PATH"
+            }
+        }
+    
+        stage('Enviroment'){
+            steps {
+                echo "$DEPLOY_TO"
             }
         }
 
