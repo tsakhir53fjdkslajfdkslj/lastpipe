@@ -1,42 +1,17 @@
 pipeline {
     agent any 
-    parameters {
-    string (name: 'NAME', description: 'Please tell me your name')
-    choice (name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose gender')        
 
-    }
     environment {
-        DEPLOY_TO = 'production'
+        MY_CRED = credentials('MY_SECRET')
     }
+
 
     stages {
-        stage('Initialization'){
+        stage('Load Credentials'){
             steps {
-                echo "$JAVA_INSTALLATION_PATH"
-            }
-        }
-    
-        stage('Enviroment'){
-            steps {
-                echo "$DEPLOY_TO"
-            }
-        }
-
-        stage ('Printing name'){
-            steps {
-                script {
-                    def name = "${params.NAME}"
-                    def gender = "${params.GENDER}"
-
-                    if(gender=="Male"){
-                        echo "Mr. $name"
-                    }
-                    else {
-                        echo "Mrs. $name"
-                    }
-                }
+                echo "Username is $MY_CRED_USR"
+                echo "Password is $MY_CRED_PSW"
             }
         }
     }
-
 }
