@@ -5,11 +5,13 @@ pipeline {
     choice (name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose gender')        
 
     }
-        stage(){
+        stage(fdsa){
+            steps {
             git branch: 'master' , 
             credentailsId: '12345-1234-4696-af25-123455',
             url: 'ssh://git@bitbucket.org:company/repo.git'
-        }
+ 
+}
         stage ('Printing name'){
             steps {
                 script {
