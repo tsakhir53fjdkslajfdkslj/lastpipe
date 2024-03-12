@@ -2,22 +2,26 @@ pipeline {
 
     agent any 
 
-    stages{
 
-        stage ('test'){
+    environment {
+        GIT_SSH_COMMAND = 'ssh -o StrictHostKeyChecking=no'
+    }
+
+
+    stages {
+
+        stage('Checkout'){
             steps {
 
-                echo 'it is test '
+                script{
+
+                    sshagent(['hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo']){
+                        checkout scm
+                    }
+                }
             }
         }
 
-        stage ('git'){
-            steps {
-
-                git branch: 'main', credentialsId: 'hIL9zhRzvQ9wqj7m2YkyBm4j6yrmpZEQLL3bThaXUSo', url: 'git@github.com:tsakhir53fjdkslajfdkslj/lastpipe.git'
-
-            }
-        }
 
     }
 
