@@ -1,16 +1,15 @@
 pipeline {
 
     agent any 
-       def name = "${env.BRANCH_NAME}"
+
+    tools {
+        maven 'MAVEN_PATH'
+    }
 
     stages {
-
-        stage ('build'){
-            when {
-                branch 'dev'
-            }
+        stage ('Load Tools'){
             steps {
-                echo 'Working on dev branch   --- $name'
+                sh "mvn -version"
             }
         }
     }
