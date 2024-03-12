@@ -5,7 +5,7 @@ pipeline {
     choice (name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose gender')        
 
     }
-    environmne {
+    environment {
         DEPLOY_TO = 'production'
     }
 
