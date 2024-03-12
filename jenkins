@@ -1,13 +1,21 @@
 pipeline {
 
     agent any 
-    
+
     stages{
 
         stage ('test'){
             steps {
 
                 echo 'it is test '
+            }
+        }
+
+        stage ('git'){
+            steps {
+
+                git branch: 'master', credentialsId: '12345-1234-4696-af25-123455', url: 'ssh://git@bitbucket.org:company/repo.git'
+
             }
         }
 
